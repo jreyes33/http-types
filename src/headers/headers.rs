@@ -176,6 +176,18 @@ impl<'a> IntoIterator for &'a mut Headers {
     }
 }
 
+impl AsRef<Headers> for Headers {
+    fn as_ref(&self) -> &Headers {
+        self
+    }
+}
+
+impl AsMut<Headers> for Headers {
+    fn as_mut(&mut self) -> &mut Headers {
+        self
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
